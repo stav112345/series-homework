@@ -59,3 +59,16 @@ export const renameSeries = (series, id, newTitle) => {
     return show;
   });
 };
+
+//C-2
+export const addSeason = (series, showId, season) => {
+  return series.map(show => {
+    if (show.id === showId) {
+      return {
+        ...show,
+        seasons: [...show.seasons, season]
+      };
+    }
+    return show;
+  });
+};
