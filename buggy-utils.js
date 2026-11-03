@@ -6,8 +6,12 @@ export const getEpisodeById = (season, idText) =>
 season.episodes.find(episode => episode.id === Number(idText));
 console.log(getEpisodeById ? getEpisodeById.title : "not found")
 
-// export const addEpisodeToFirstSeason = (show, episode) => {
-//   const firstSeason = show.seasons[0];
-//   firstSeason.episodes.push(episode);
-//   return { ...show };
-// };
+export const addEpisodeToFirstSeason = (show, newEpisode) => {
+  return {...show,seasons: show.seasons.map((season, index) => {
+      if (index === 0)
+         { return { ...season,episodes: [...season.episodes, newEpisode] };
+         }
+      return season;
+    })
+  };
+};
