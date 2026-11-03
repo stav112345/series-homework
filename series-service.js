@@ -72,3 +72,12 @@ export const addSeason = (series, showId, season) => {
     return show;
   });
 };
+
+//C-3
+const episode = { id: 303, title: "Comet Cake", rating: 8.1, duration: 26 };
+export const addEpisode = (series, showId, seasonNumber, episode) =>
+{
+  return addEpisode.map
+}
+
+//C-4
